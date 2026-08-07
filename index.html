@@ -50,7 +50,9 @@
 </a>
     </div>
 </section>
-<section id="informacion1">
+
+<!-- Sección Quiénes Somos con reveal -->
+<section id="informacion1" class="reveal">
           <article><h2 class="span">DOS DÉCADAS</h2>
             <h2>BRINDANDO UN SERVICIO COMPLETO CON EL MEJOR EQUIPAMIENTO</h2> 
           <p>Somos una empresa de Servicios de Mantenimiento Sanitario, dedicados a cubrir todas las necesidades de nuestros clientes, para esto tenemos un equipo altamente calificado. Cumplimos con todas las normas de seguridad laboral y contamos con todos los elementos y procedimientos para hacer un trabajo seguro y responsable. Trabajamos con materiales autorizados por la I.M y U.N.I.T, como también siguiendo los procedimientos indicados.
@@ -59,37 +61,41 @@
               <img src="img/camioneta.png" alt="camioneta">
               <img src="img/oficina.png" alt="oficina">
             </article>
-        </section>
-      <section id="actividades" class="contenedor" > 
-              <article class="especial">
+</section>
+
+<!-- Sección Servicios con reveal en el título y en cada tarjeta -->
+<section id="actividades" class="contenedor"> 
+              <article class="especial reveal">
                   <h2>TODO LO QUE BUSCÁS EN SANITARIA Y MÁS</h2>
               </article>
-              <article class="article"> 
+              <article class="article reveal"> 
                     <img src="img/icono_reparaciones.webp" alt="Reparaciones"> 
                     <h3>Reparaciones</h3> 
-              </article>
-              <article class="article"> 
+              </article> 
+              <article class="article reveal"> 
                      <img src="img/icono_desagotes.webp" alt="Desagotes"> 
                      <h3>Desagotes</h3> 
               </article> 
-              <article class="article"> 
+              <article class="article reveal"> 
                      <img src="img/icono_mantenimientos.webp" alt="Mantenimientos"> 
                      <h3>Mantenimientos</h3> 
               </article> 
-              <article class="article2"> 
-                      <img src="img/icono_graseras.webp" alt="Graseras"> 
-                      <h3>Graseras colectivas o individuales</h3> 
+              <article class="article2 reveal"> 
+                     <img src="img/icono_graseras.webp" alt="Graseras"> 
+                     <h3>Graseras colectivas o individuales</h3> 
               </article> 
-              <article class="article2"> 
-                      <img src="img/icono_desagotes.webp" alt="Hidrolavado de cañerías"> 
-                      <h3>Hidrolavado de cañerías</h3> 
+              <article class="article2 reveal"> 
+                     <img src="img/icono_desagotes.webp" alt="Hidrolavado de cañerías"> 
+                     <h3>Hidrolavado de cañerías</h3> 
               </article> 
-              <article class="article2"> 
+              <article class="article2 reveal"> 
                        <img src="img/icono_tanque.webp" alt="Afiche"> 
                        <h3>Limpieza y Desinfección de tanques de agua</h3> 
               </article>  
-        </section>
-              <section id="informacion2">
+</section>
+
+<!-- Secciones de Contacto con reveal -->
+<section id="informacion2" class="reveal">
                     <article>
                       <h3>ENCONTRANOS EN </h3>
                     </article>
@@ -99,13 +105,14 @@
                     height="auto" 
                     style="border:0;" 
                     allowfullscreen="" 
-                    loading=" lazy" 
+                    loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                   </article>
-                </section>
-              <section id="informacion">
+</section>
+
+<section id="informacion" class="reveal">
                    <article>
-                        <h3>CONTACTO DE VENTAS</h3>
+                       <h3>CONTACTO DE VENTAS</h3>
                       <address>
                         <dl>
                           <dt>Números de teléfono</dt>
@@ -118,7 +125,7 @@
                         </dl>
                       </address>
                     </article>
-                    <article class=mapa >
+                    <article class="mapa">
                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3273.392025999105!2d-56.1348352!3d-34.8715009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f80c1b995a5eb%3A0xcc86477a74e490bf!2sPan%20de%20Az%C3%BAcar%202542%2C%2012000%20Montevideo%2C%20Departamento%20de%20Montevideo!5e0!3m2!1sen!2suy!4v1758556602661!5m2!1sen!2suy" 
                     width="100%" 
                     height="auto"  
@@ -127,8 +134,10 @@
                     loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                   </article>
-                </section>
-          <section id="fondo">
+</section>
+
+<!-- Formulario de Consultas con reveal -->
+<section id="fondo" class="reveal">
               <div>
                 <h3>CONSULTAS</h3>
     <form action="https://formspree.io/f/xeezwrov" method="POST">
@@ -145,8 +154,10 @@
       <button type="submit">Enviar</button>
     </form>
   </div>
-        </section>
-        <section id="clientes">
+</section>
+
+<!-- Sección Clientes con reveal -->
+<section id="clientes" class="reveal">
           <h3>NUESTROS CLIENTES</h3>
           <div class="carousel">
   <div class="group">
@@ -173,9 +184,10 @@
   </div>
 </div>
           <img src="img/pago.webp" alt="metodos de pago">
-        </section>
-    </main>
- <footer>
+</section>
+</main>
+
+<footer>
   <div class="footer-container">
     <div class="footer-section">
       <img src="img/imagotipo-blanco.webp" alt="Logística Sanitaria Logo" class="logols">
@@ -207,8 +219,8 @@
       </ul>
     </div>
   </div>
-  </footer>
-</body>
+</footer>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const ham = document.getElementById('ham');
@@ -237,7 +249,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ==========================================
+    // INTERSECTION OBSERVER PARA EL EFECTO REVEAL
+    // ==========================================
+    const revealElements = document.querySelectorAll('.reveal');
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -60px 0px', // Se activa un poco antes de llegar abajo
+      threshold: 0.1
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          // Descomenta si querés que aparezca solo una vez y no vuelva a ocultarse al subir:
+          // observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    revealElements.forEach(el => revealObserver.observe(el));
 });
+
 document.querySelectorAll('header nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         // Solo aplicar en móviles (menor a 768px)
@@ -259,6 +294,7 @@ document.querySelectorAll('header nav a').forEach(anchor => {
         }
     });
 });
+
 /**
  * Función que controla la VELOCIDAD de desplazamiento
  * @param {number} endY - Posición final en píxeles
@@ -288,4 +324,5 @@ function smoothScrollTo(endY, duration) {
     requestAnimationFrame(animation);
 }
 </script>
+</body>
 </html>
