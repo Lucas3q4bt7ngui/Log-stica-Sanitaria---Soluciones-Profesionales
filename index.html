@@ -339,14 +339,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const contenido = document.getElementById('contenidoHero');
 
     if (video && contenido) {
-        // Evento que se dispara cuando el video termina de reproducirse
-        video.addEventListener('ended', () => {
-            // 1. (Opcional) Desvanecer el video suavemente hacia el fondo negro/oscuro
+        // Función para mostrar el contenido
+        const mostrarContenido = () => {
             video.classList.add('fade-out');
-
-            // 2. Hacer aparecer el texto y el botón con el desplazamiento hacia arriba
             contenido.classList.remove('oculto');
             contenido.classList.add('visible');
+        };
+
+        // 1. Cuando el video termina normalmente
+        video.addEventListener('ended', mostrarContenido);
+
+        // 2. Si hay un error al cargar el video en GitHub (e.g. 404 o códec no soportado)
+        video.addEventListener('error', () => {
+            console.warn("No se pudo cargar el video. Mostrando contenido de respaldo.");
+            mostrarContenido();
+        });
+
+        // 3. Forzar reproducción automática y manejar el bloqueo de Autoplay del navegador
+        video.play().catch(error => {
+            console.warn("El navegador bloqueó la reproducción automática del video:", error);
+            // Si el navegador bloquea el video, mostramos el contenido directamente
+            mostrarContenido();
         });
     }
 });
