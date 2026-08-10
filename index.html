@@ -37,20 +37,27 @@
         </nav>
     </header>
     <main>
-        <section class="slide">
-    <div class="contenedor1">
+        <section class="slide-video">
+    <!-- Contenedor del Video -->
+    <div class="video-container">
+        <video id="heroVideo" autoplay muted playsinline preload="auto">
+            <source src="IMG/videoparaweb.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Contenido (Texto y Botón) que aparecerá al finalizar el video -->
+    <div class="contenedor1 oculto" id="contenidoHero">
         <h1>COMPROMISO PROFESIONAL<br>
             <span>CON TU HOGAR O EMPRESA</span>
             <span class="subtitulo">TODO EN SERVICIOS SANITARIOS</span>
         </h1>
         <a href="https://wa.link/6sq8gr" class="boton">
-    <img src="img/logowhatsapp_azul.webp" class="img-normal" alt="Logo">
-    <img src="img/logowhatsapp.webp" class="img-hover" alt="WhatsApp">
-    PRESUPUESTO SIN COSTO
-</a>
+            <img src="img/logowhatsapp_azul.webp" class="img-normal" alt="Logo">
+            <img src="img/logowhatsapp.webp" class="img-hover" alt="WhatsApp">
+            PRESUPUESTO SIN COSTO
+        </a>
     </div>
 </section>
-
 <!-- Sección Quiénes Somos con reveal -->
 <section id="informacion1" class="reveal">
           <article><h2 class="span">DOS DÉCADAS</h2>
@@ -295,6 +302,9 @@ document.querySelectorAll('header nav a').forEach(anchor => {
     });
 });
 
+
+
+
 /**
  * Función que controla la VELOCIDAD de desplazamiento
  * @param {number} endY - Posición final en píxeles
@@ -323,6 +333,23 @@ function smoothScrollTo(endY, duration) {
     }
     requestAnimationFrame(animation);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('heroVideo');
+    const contenido = document.getElementById('contenidoHero');
+
+    if (video && contenido) {
+        // Evento que se dispara cuando el video termina de reproducirse
+        video.addEventListener('ended', () => {
+            // 1. (Opcional) Desvanecer el video suavemente hacia el fondo negro/oscuro
+            video.classList.add('fade-out');
+
+            // 2. Hacer aparecer el texto y el botón con el desplazamiento hacia arriba
+            contenido.classList.remove('oculto');
+            contenido.classList.add('visible');
+        });
+    }
+});
 </script>
 </body>
 </html>
