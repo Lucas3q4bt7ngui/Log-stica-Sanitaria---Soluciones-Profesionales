@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap);
 :root {
   --colorNaranja: #F29224;
-  --colorAzul: #104CAD;
+  --colorAzul: rgb(16, 76, 173);
   --colorNegro: black;
   --colorBlanco: #fff;
 }
@@ -55,7 +55,9 @@ html { scroll-behavior: smooth; }
   height: 22px;
   cursor: pointer;
 }
-.nav-icon span, footer, #informacion2, #telefono, .boton:hover { background-color: var(--colorAzul);}
+.nav-icon span, footer, #informacion2, #telefono{ background-color: var(--colorAzul);}
+.boton:hover { background-color: var(--colorNaranja);}
+
 .nav-icon span {
   width: 100%;
   height: 4px;
@@ -450,7 +452,7 @@ button {
     justify-content: space-between;    
     }
   h1 { 
-    padding-bottom: 1em; 
+    padding-bottom: 0.5em; 
     font-size: 3em; 
     }
   #telefono {
@@ -576,66 +578,65 @@ button {
   transform: translateY(0);
 }
 
-
-
-
-
-
 /* ===================================================
-   SECCIÓN HERO CON VIDEO
+   SECCIÓN HERO CON VIDEO (CORREGIDO)
    =================================================== */
-
 .slide-video {
   position: relative;
   width: 100%;
-  height: 100vh; /* O la altura que tengas configurada para el hero */
-  background-color: #0b132b; /* Color de fondo (negro o azul oscuro) al terminar el video */
+  height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Alinea el contenido a la izquierda sobre la sombra */
   overflow: hidden;
 }
 
-/* El video ocupa todo el contenedor de fondo */
+/* Contenedor padre del video y la sombra */
 .video-container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1; /* Nivel base */
+}
+
+/* 1. El video va al fondo */
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   z-index: 1;
 }
 
-.video-container video {
+/* 2. La capa de sombra va por ENCIMA del video */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Asegura que el video cubra todo el espacio sin deformarse */
-  transition: opacity 1s ease-out; /* Para que si quieres ocultar el video al final sea suave */
+  z-index: 2; /* Mayor que el video */
+  pointer-events: none;
+  background: linear-gradient(
+    to right, 
+    rgb(2, 68, 173) 0%,   /* Oscuro en el borde izquierdo */
+    rgba(1, 46, 119, 0.6) 40%,   /* Transición sobre el texto */
+    rgba(1, 46, 119, 0) 60%      /* Transparente hacia la derecha */
+  );
 }
-
-/* Ocultar el video progresivamente cuando finalice */
-.video-container video.fade-out {
-  opacity: 0;
-}
-
-/* El texto se posiciona por encima del video */
+/* 3. El contenido (texto y botón) va por ENCIMA de la sombra */
 .contenedor1 {
   position: relative;
-  z-index: 2;
-  /* Transición de aparición: sube ligeramente y pasa de opacidad 0 a 1 */
+  margin: 0 0 0 1.5em; /* Ajuste para evitar desbordamiento en móvil */
+  max-width: 45em;
+  text-align: left; /* Alineado a la izquierda para seguir la sombra */
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
-
-/* Estado inicial del texto (Oculto) */
-.contenedor1.oculto {
-  opacity: 0;
-  transform: translateY(40px); /* Posicionado más abajo */
-  pointer-events: none; /* Evita clics mientras está oculto */
-}
-
-/* Estado visible del texto (Aparece y sube) */
-.contenedor1.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+.boton{
+  transition: .3s;
+  margin-left: 10em;
 }
