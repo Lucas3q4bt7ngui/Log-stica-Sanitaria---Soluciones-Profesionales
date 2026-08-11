@@ -40,11 +40,13 @@
         <section class="slide-video">
     <!-- Contenedor del Video -->
     <div class="video-container">
-        <video id="heroVideo" autoplay muted playsinline preload="auto">
-    <source src="./img/videoparaweb.mp4" type="video/mp4">
-        </video>
-    </div>
-
+    <video id="heroVideo" autoplay muted playsinline>
+        <source src="img/videoparaweb.mp4" type="video/mp4">
+    </video>
+    
+    <!-- CAPA DE SOMBRA (Agregar este div) -->
+    <div class="video-overlay"></div>
+</div>
     <!-- Contenido (Texto y Botón) que aparecerá al finalizar el video -->
     <div class="contenedor1 oculto" id="contenidoHero">
         <h1>COMPROMISO PROFESIONAL<br>
@@ -58,7 +60,6 @@
         </a>
     </div>
 </section>
-<!-- Sección Quiénes Somos con reveal -->
 <section id="informacion1" class="reveal">
           <article><h2 class="span">DOS DÉCADAS</h2>
             <h2>BRINDANDO UN SERVICIO COMPLETO CON EL MEJOR EQUIPAMIENTO</h2> 
@@ -69,8 +70,6 @@
               <img src="img/oficina.png" alt="oficina">
             </article>
 </section>
-
-<!-- Sección Servicios con reveal en el título y en cada tarjeta -->
 <section id="actividades" class="contenedor"> 
               <article class="especial reveal">
                   <h2>TODO LO QUE BUSCÁS EN SANITARIA Y MÁS</h2>
@@ -100,23 +99,22 @@
                        <h3>Limpieza y Desinfección de tanques de agua</h3> 
               </article>  
 </section>
-
 <!-- Secciones de Contacto con reveal -->
 <section id="informacion2" class="reveal">
-                    <article>
-                      <h3>ENCONTRANOS EN </h3>
-                    </article>
-                    <article class="mapa">
-                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d817.9549303920163!2d-56.19120113042692!3d-34.91097339854001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f81ce71e8ad1f%3A0xed9f92861cbf711f!2sH%C3%A9ctor%20Guti%C3%A9rrez%20Ruiz%201080%2C%2011100%20Montevideo%2C%20Departamento%20de%20Montevideo!5e0!3m2!1sen!2suy!4v1758556536260!5m2!1sen!2suy" 
+            <article>
+               <h3>ENCONTRANOS EN </h3>
+            </article>
+            <article class="mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d817.9549303920163!2d-56.19120113042692!3d-34.91097339854001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f81ce71e8ad1f%3A0xed9f92861cbf711f!2sH%C3%A9ctor%20Guti%C3%A9rrez%20Ruiz%201080%2C%2011100%20Montevideo%2C%20Departamento%20de%20Montevideo!5e0!3m2!1sen!2suy!4v1758556536260!5m2!1sen!2suy" 
                     width="100%" 
                     height="auto" 
                     style="border:0;" 
                     allowfullscreen="" 
                     loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                  </article>
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </article>
 </section>
-
 <section id="informacion" class="reveal">
                    <article>
                        <h3>CONTACTO DE VENTAS</h3>
@@ -142,7 +140,6 @@
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                   </article>
 </section>
-
 <!-- Formulario de Consultas con reveal -->
 <section id="fondo" class="reveal">
               <div>
@@ -227,7 +224,6 @@
     </div>
   </div>
 </footer>
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const ham = document.getElementById('ham');
@@ -256,7 +252,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
     // ==========================================
     // INTERSECTION OBSERVER PARA EL EFECTO REVEAL
     // ==========================================
@@ -266,7 +261,6 @@ document.addEventListener('DOMContentLoaded', () => {
       rootMargin: '0px 0px -60px 0px', // Se activa un poco antes de llegar abajo
       threshold: 0.1
     };
-
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -301,10 +295,6 @@ document.querySelectorAll('header nav a').forEach(anchor => {
         }
     });
 });
-
-
-
-
 /**
  * Función que controla la VELOCIDAD de desplazamiento
  * @param {number} endY - Posición final en píxeles
@@ -334,33 +324,23 @@ function smoothScrollTo(endY, duration) {
     requestAnimationFrame(animation);
 }
 
+// CÓDIGO NUEVO REEMPLAZO:
 document.addEventListener('DOMContentLoaded', () => {
     const video = document.getElementById('heroVideo');
     const contenido = document.getElementById('contenidoHero');
 
     if (video && contenido) {
-        // Función para mostrar el contenido
-        const mostrarContenido = () => {
-            video.classList.add('fade-out');
+        // En lugar de esperar que termine, activamos el texto al iniciar la reproducción
+        video.addEventListener('playing', () => {
             contenido.classList.remove('oculto');
             contenido.classList.add('visible');
-        };
-
-        // 1. Cuando el video termina normalmente
-        video.addEventListener('ended', mostrarContenido);
-
-        // 2. Si hay un error al cargar el video en GitHub (e.g. 404 o códec no soportado)
-        video.addEventListener('error', () => {
-            console.warn("No se pudo cargar el video. Mostrando contenido de respaldo.");
-            mostrarContenido();
         });
 
-        // 3. Forzar reproducción automática y manejar el bloqueo de Autoplay del navegador
-        video.play().catch(error => {
-            console.warn("El navegador bloqueó la reproducción automática del video:", error);
-            // Si el navegador bloquea el video, mostramos el contenido directamente
-            mostrarContenido();
-        });
+        // Por si la reproducción automática entra de inmediato antes de registrar el listener
+        if (!video.paused) {
+            contenido.classList.remove('oculto');
+            contenido.classList.add('visible');
+        }
     }
 });
 </script>
