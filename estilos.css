@@ -11,11 +11,71 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              transform 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: opacity, transform;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.slide-video {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinea el contenido a la izquierda sobre la sombra */
+  overflow: hidden;
+}
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Nivel base */
+}
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Mayor que el video */
+  pointer-events: none;
+  background: linear-gradient(
+    to top, 
+    rgb(1, 46, 119) 0%,   /* Oscuro en el borde izquierdo */
+    rgba(1, 46, 119, 0.6) 40%,   /* Transición sobre el texto */
+    rgba(1, 46, 119, 0) 60%      /* Transparente hacia la derecha */
+  );
+}
+/* Por defecto muestra el de móvil y oculta el de escritorio */
+.video-desktop {
+    display: none;
+}
+.video-mobile {
+    display: block;
+    width: 100%;
+}
 h1, h2, h3, p, a, li { text-decoration: none; }
 html { scroll-behavior: smooth; }
 .boton {
   position: relative;
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   overflow: hidden;
   width: 100%;
@@ -23,6 +83,7 @@ html { scroll-behavior: smooth; }
   padding: 1em;
   border-radius: 2em;
   cursor: pointer;
+  margin: 0 auto;
 }
 .boton img, .boton .img-hover {
   padding-right: 0.5em;
@@ -338,9 +399,10 @@ button {
 .contenedor1 { 
   position: relative; 
   z-index: 2; 
-  margin: 0 auto; 
-  max-width: 75em; 
-  padding: 6em 2em; }
+  margin: 30em 0 0 0;
+  max-width: 45em; 
+  padding: 6em 2em;
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; }
 @keyframes zoom {
   0% { transform: scale(1); }
   100% { transform: scale(1.1); }
@@ -397,6 +459,27 @@ button {
 }
 .logols { width: 8em; }
 @media all and (min-width: 768px) {
+    .contenedor1 {
+  margin: 0 0 0 1.5em; /* Ajuste para evitar desbordamiento en móvil */
+  max-width: 45em;
+  text-align: left; /* Alineado a la izquierda para seguir la sombra */
+}
+  .video-overlay {
+  background: linear-gradient(
+    to right, 
+    rgb(1, 46, 119) 0%,   /* Oscuro en el borde izquierdo */
+    rgba(1, 46, 119, 0.6) 40%,   /* Transición sobre el texto */
+    rgba(1, 46, 119, 0) 60%      /* Transparente hacia la derecha */
+  );
+}
+.video-mobile {
+        display: none;
+    }
+    .video-desktop {
+        display: block;
+        width: 100%;
+    }
+
   .nav-menu, .footer-section, #telefono, .footer-logo, header nav, .imagen, nav, #actividades{ display: flex; }
   .nav-menu, .footer-section, .footer-logo { flex-direction: column; }
   .nav-menu {
@@ -506,6 +589,7 @@ button {
     transform: translateY(0.2em); }
   .cabezal { height: 6em; }
 } 
+/* 2. La capa de sombra va por ENCIMA del video */
 @media all and (min-width: 1200px) {
   .oficina { padding-left: 3.8em; }
   #informacion {
@@ -565,78 +649,4 @@ button {
   #actividades article { flex-basis: 21em; }
   #actividades .especial { height: 1em; }
   .contenedor { max-width: none; }
-}
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1), 
-              transform 2s cubic-bezier(0.165, 0.84, 0.44, 1);
-  will-change: opacity, transform;
-}
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===================================================
-   SECCIÓN HERO CON VIDEO (CORREGIDO)
-   =================================================== */
-.slide-video {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* Alinea el contenido a la izquierda sobre la sombra */
-  overflow: hidden;
-}
-
-/* Contenedor padre del video y la sombra */
-.video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* Nivel base */
-}
-
-/* 1. El video va al fondo */
-.video-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-/* 2. La capa de sombra va por ENCIMA del video */
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2; /* Mayor que el video */
-  pointer-events: none;
-  background: linear-gradient(
-    to right, 
-    rgb(2, 68, 173) 0%,   /* Oscuro en el borde izquierdo */
-    rgba(1, 46, 119, 0.6) 40%,   /* Transición sobre el texto */
-    rgba(1, 46, 119, 0) 60%      /* Transparente hacia la derecha */
-  );
-}
-/* 3. El contenido (texto y botón) va por ENCIMA de la sombra */
-.contenedor1 {
-  position: relative;
-  margin: 0 0 0 1.5em; /* Ajuste para evitar desbordamiento en móvil */
-  max-width: 45em;
-  text-align: left; /* Alineado a la izquierda para seguir la sombra */
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-}
-.boton{
-  transition: .3s;
-  margin-left: 10em;
 }
