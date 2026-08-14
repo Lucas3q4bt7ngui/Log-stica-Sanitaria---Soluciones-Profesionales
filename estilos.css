@@ -25,13 +25,11 @@
 .slide-video {
   position: relative;
   width: 100%;
-  min-height: 100dvh; /* Mínimo el alto de la pantalla del celular, pero puede crecer si es necesario */
-  height: 45em;
-  display: flex;
-  align-items: flex-end; /* Empuja el contenido hacia abajo naturalmente */
-  justify-content: center;
-  overflow: hidden;
-  padding-bottom: 1em; /* Margen de seguridad inferior para el botón */
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: 38vh auto; /* Aumentado a 38vh para empujar el texto más abajo */
+  overflow: visible;
+  padding-bottom: 1em;
 }
 .video-container {
   position: absolute;
