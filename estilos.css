@@ -25,32 +25,30 @@
 .slide-video {
   position: relative;
   width: 100%;
-  min-height: 100svh; /* 'svh' usa el alto real sin contar la barra de direcciones */
+  min-height: 100dvh; 
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;  /* Permite que el contenido no se recorte si sobresale */
-  padding-top: 7em;   /* Deja espacio para que el header pegajoso no tape el texto */
-  padding-bottom: 3em;
+  overflow: hidden;  
+  padding: 6em 1em 3em 1em; /* Padding superior para no pisar el header y padding inferior para el botón */
 }
 .video-container {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* Nivel base */
+  z-index: 1;
+  pointer-events: none;
 }
 .video-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
-  pointer-events: none;
+  object-position: center; 
 }
 .video-overlay {
   position: absolute;
@@ -389,6 +387,7 @@ button {
   position: relative; 
   z-index: 2; 
   margin: 40em 0 0 0;
+  width: 100%;
   max-width: 45em; 
   padding: 6em 2em;
   transition: opacity 1.5s ease-out, transform 1.5s ease-out; }
