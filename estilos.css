@@ -29,6 +29,7 @@
   display: grid;
   grid-template-rows: 38vh auto; /* Aumentado a 38vh para empujar el texto más abajo */
   overflow: visible;
+  padding-top: 3em;
 }
 .video-container {
   position: absolute;
