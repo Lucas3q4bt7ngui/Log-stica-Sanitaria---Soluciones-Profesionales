@@ -42,10 +42,10 @@
     <div class="video-container">
     <video autoplay muted playsinline>
     <!-- Video para móviles (pantallas menores a 768px) -->
-    <source src="img/videoparacelular.mp4" type="video/mp4" media="(max-width: 767px)">
+    <source src="img/videoparacelular.mp4" type="video/mp4" media="(max-width: 1199px)">
 
     <!-- Video actual para pantallas desde 768px en adelante -->
-    <source src="img/videoparaweb.mp4" type="video/mp4" media="(min-width: 768px)">
+    <source src="img/videoparaweb.mp4" type="video/mp4" media="(min-width: 1200px)">
 </video>
     
     <!-- CAPA DE SOMBRA (Agregar este div) -->
@@ -53,10 +53,12 @@
 </div>
     <!-- Contenido (Texto y Botón) que aparecerá al finalizar el video -->
     <div class="contenedor1 reveal" id="contenidoHero">
-        <h1>COMPROMISO PROFESIONAL<br>
-            <span>CON TU HOGAR O EMPRESA</span>
-            <span class="subtitulo">TODO EN SERVICIOS SANITARIOS</span>
-        </h1>
+        <h1>COMPROMISO <br> PROFESIONAL</h1>
+            <p>Sabemos que una falla sanitaria no puede esperar. Por eso, 
+              nuestro equipo de técnicos certificados trabaja con los más altos 
+              estándares de calidad y diagnóstico preciso, asegurando resultados duraderos, 
+              limpios y a la medida de tus necesidades reales.</p>
+        
         <a href="https://wa.link/6sq8gr" class="boton">
             <img src="img/logowhatsapp_azul.webp" class="img-normal" alt="Logo">
             <img src="img/logowhatsapp.webp" class="img-hover" alt="WhatsApp">
@@ -67,7 +69,11 @@
 <section id="informacion1" class="reveal">
           <article><h2 class="span">DOS DÉCADAS</h2>
             <h2>BRINDANDO UN SERVICIO COMPLETO CON EL MEJOR EQUIPAMIENTO</h2> 
-          <p>Somos una empresa de Servicios de Mantenimiento Sanitario, dedicados a cubrir todas las necesidades de nuestros clientes, para esto tenemos un equipo altamente calificado. Cumplimos con todas las normas de seguridad laboral y contamos con todos los elementos y procedimientos para hacer un trabajo seguro y responsable. Trabajamos con materiales autorizados por la I.M y U.N.I.T, como también siguiendo los procedimientos indicados.
+          <p>Somos una empresa de Servicios de Mantenimiento Sanitario, dedicados a cubrir todas las 
+            necesidades de nuestros clientes, para esto tenemos un equipo altamente calificado. Cumplimos 
+            con todas las normas de seguridad laboral y contamos con todos los elementos y procedimientos 
+            para hacer un trabajo seguro y responsable. Trabajamos con materiales autorizados por la I.M y 
+            U.N.I.T, como también siguiendo los procedimientos indicados.
             <br> <br>  Desarrollamos un modelo de atención basados en el servicio de Mantenimiento Mensual.</p></article>
             <article class="imagen">
               <img src="img/camioneta.png" alt="camioneta">
@@ -327,7 +333,6 @@ function smoothScrollTo(endY, duration) {
     }
     requestAnimationFrame(animation);
 }
-
 // CÓDIGO NUEVO REEMPLAZO:
 document.addEventListener('DOMContentLoaded', () => {
     const video = document.getElementById('heroVideo');
