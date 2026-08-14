@@ -25,12 +25,14 @@
 .slide-video {
   position: relative;
   width: 100%;
+  min-height: 100svh; /* 'svh' usa el alto real sin contar la barra de direcciones */
   height: auto;
-  min-height: max-content;
   display: flex;
   align-items: center;
-  justify-content: center; /* Alinea el contenido a la izquierda sobre la sombra */
-  overflow: hidden;
+  justify-content: center;
+  overflow: visible;  /* Permite que el contenido no se recorte si sobresale */
+  padding-top: 7em;   /* Deja espacio para que el header pegajoso no tape el texto */
+  padding-bottom: 3em;
 }
 .video-container {
   position: absolute;
