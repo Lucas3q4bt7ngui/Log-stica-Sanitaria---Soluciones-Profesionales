@@ -25,7 +25,7 @@
 .slide-video {
   position: relative;
   width: 100%;
-  min-height: 100dvh;
+  min-height: 200dvh;
   display: grid;
   grid-template-rows: 38vh auto; /* Aumentado a 38vh para empujar el texto más abajo */
   overflow: visible;
