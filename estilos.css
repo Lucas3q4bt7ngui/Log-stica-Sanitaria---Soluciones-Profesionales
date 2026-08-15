@@ -25,11 +25,9 @@
 .slide-video {
   position: relative;
   width: 100%;
-  min-height: 200dvh;
-  display: grid;
-  grid-template-rows: 38vh auto; /* Aumentado a 38vh para empujar el texto más abajo */
+  min-height: 180dvh;
   overflow: visible;
-  padding-top: 3em;
+  padding-top: 30em;
 }
 .video-container {
   position: absolute;
@@ -571,7 +569,8 @@ button {
       .slide-video {
   justify-content: flex-start;
   padding-left: 2em;
-  padding-bottom: 8em;
+  padding-top: 8em;
+    min-height: 100dvh;
 }
     .slide-video h1 {font-size: 4em;}
     .slide-video h1,.slide-video p {text-align: left;}
