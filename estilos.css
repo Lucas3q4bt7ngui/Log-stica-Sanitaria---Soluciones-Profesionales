@@ -25,7 +25,7 @@
 .slide-video {
   position: relative;
   width: 100%;
-  min-height: 180dvh;
+  min-height: 20em;
   overflow: visible;
   padding-top: 30em;
 }
