@@ -27,8 +27,8 @@
   width: 100%;
   min-height: 20em;
   overflow: visible;
-  padding-top: 20em;
-  padding-bottom: 2em;
+  padding-top: 15em;
+  padding-bottom: 4em;
 }
 .video-container {
   position: absolute;
@@ -63,7 +63,7 @@
     to top, 
     rgb(3, 58, 170) 10%,   /* Oscuro en el borde izquierdo */
     rgba(3, 58, 170, 0.8) 40%,   /* Transición sobre el texto */
-    rgba(3, 58, 170, 0) 50%      /* Transparente hacia la derecha */
+    rgba(3, 58, 170, 0) 60%      /* Transparente hacia la derecha */
   );
 }
 /* Por defecto muestra el de móvil y oculta el de escritorio */
