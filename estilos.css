@@ -75,7 +75,7 @@
     width: 100%;
 }
 .slide-video h1{text-align: center;
-font-size: 3em;}
+font-size: 2.5em;}
 .slide-video p{color: var(--colorBlanco);
 text-align: center;}
 h1, h2, h3, p, a, li { text-decoration: none; }
@@ -247,7 +247,7 @@ dt, dd, dd a {
 font-style: normal;
 border: none; }
 p { 
-  font-size: 1.3em; 
+  font-size: 1em; 
   margin-top: 1em; 
   color: var(--colorNegro); }
 dd, dt{ 
@@ -562,28 +562,40 @@ button {
     color: var(--colorNaranja); 
     transform: translateY(0.2em); }
   .cabezal { height: 6em; }
-} 
-/* 2. La capa de sombra va por ENCIMA del video */
-@media all and (min-width: 1200px) {
-      .contenedor1 { text-align: left;
-      margin: 0;}
-      .slide-video {
-  justify-content: flex-start;
-  padding-left: 2em;
-  padding-top: 8em;
-    min-height: 100dvh;
-}
-    .slide-video h1 {font-size: 4em;}
-    .slide-video h1,.slide-video p {text-align: left;}
-  .slide-video p {margin-top: -1em;
-  max-width: 550px;}
-    .video-overlay {
+ .video-overlay {
   background: linear-gradient(
     to right, 
     rgb(3, 58, 170) 0%,   /* Oscuro en el borde izquierdo */
     rgba(3, 58, 170, 0.6) 45%,   /* Transición sobre el texto */
     rgba(3, 58, 170, 0) 60%      /* Transparente hacia la derecha */
   );
+}
+ .contenedor1 { text-align: left;
+      margin: 0;
+      }
+  .slide-video h1 {font-size: 3em;}
+  .slide-video h1,.slide-video p {text-align: left;}
+  .slide-video p {
+    margin-top: -1em;
+    max-width: 350px;
+    font-size: 1em;
+}
+  .slide-video {
+    padding-top: 5em;
+}
+} 
+   
+/* 2. La capa de sombra va por ENCIMA del video */
+@media all and (min-width: 1200px) {
+  .slide-video h1 {font-size: 4em;}
+  .slide-video {
+    justify-content: flex-start;
+    padding-left: 2em;
+    padding-top: 11em;
+    min-height: 100dvh;
+}
+  .slide-video p {
+    max-width: 550px;
 }
   #informacion {
     display: flex;
