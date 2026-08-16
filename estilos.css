@@ -25,9 +25,10 @@
 .slide-video {
   position: relative;
   width: 100%;
-  min-height: 10em;
+  min-height: 20em;
   overflow: visible;
   padding-top: 20em;
+  padding-bottom: 2em;
 }
 .video-container {
   position: absolute;
@@ -60,9 +61,9 @@
   pointer-events: none;
   background: linear-gradient(
     to top, 
-    rgb(3, 75, 218) 10%,   /* Oscuro en el borde izquierdo */
-    rgba(3, 75, 218, 0.8) 40%,   /* Transición sobre el texto */
-    rgba(3, 75, 218, 0) 50%      /* Transparente hacia la derecha */
+    rgb(3, 58, 170) 10%,   /* Oscuro en el borde izquierdo */
+    rgba(3, 58, 170, 0.8) 40%,   /* Transición sobre el texto */
+    rgba(3, 58, 170, 0) 50%      /* Transparente hacia la derecha */
   );
 }
 /* Por defecto muestra el de móvil y oculta el de escritorio */
