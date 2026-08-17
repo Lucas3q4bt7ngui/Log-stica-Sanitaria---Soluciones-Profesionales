@@ -315,8 +315,10 @@ button {
   }
 #informacion1 article, #informacion1 p { 
   padding-right: 0; 
-  display: grid; 
-  margin-bottom: 1em; }
+  margin-top: 2em;
+  margin-bottom: 2em; 
+}
+
 #informacion2 {
   display: grid;
   padding: 2em;
@@ -574,7 +576,8 @@ margin-right: -1em; }
     rgba(3, 58, 170, 0) 50%      /* Transparente hacia la derecha */
   );
 }
- .contenedor1 { text-align: left;
+ .contenedor1 { 
+  text-align: left;
       margin: 0;
       }
   .slide-video h1 {font-size: 3em;}
@@ -592,16 +595,23 @@ margin-right: -1em; }
 
 /* 2. La capa de sombra va por ENCIMA del video */
 @media all and (min-width: 1200px) {
+   .contenedor1 { 
+  padding-left: 3em;
+      }
     #telefono {
-    padding-left: 4em;
+    padding-left: 3.5em;
   }
   .logo {  margin: 1em; }
   .slide-video h1 {font-size: 4em;}
-  .slide-video {
-    justify-content: flex-start;
-    padding-left: 2em;
-    padding-top: 11em;
-    min-height: 100dvh;
+.slide-video {
+  position: relative;
+  width: 100%;
+  min-height: 45em;
+  overflow: visible;
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: flex-start; /* Alinea al extremo izquierdo */
+  padding: 2em 0; /* Espaciado de seguridad mínimo superior/inferior */
 }
   .slide-video p {
     max-width: 440px;
@@ -659,4 +669,13 @@ margin-right: -1em; }
   #actividades article { flex-basis: 21em; }
   #actividades .especial { height: 1em; }
   .contenedor { max-width: none; }
+}
+/* Reduce la distancia exclusivamente entre los dos h2 de #informacion1 */
+#informacion1 h2.span {
+  margin-bottom: 0;
+  margin-top: 0.3em;
+  line-height: 1; /* Elimina la altura de línea excesiva del texto grande */
+}
+#informacion1 h2:not(.span) {
+  margin-top: 0.5em; /* Margen negativo leve para pegar el texto de abajo */
 }
