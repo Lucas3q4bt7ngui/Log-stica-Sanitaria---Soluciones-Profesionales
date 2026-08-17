@@ -334,7 +334,8 @@ button {
 .head { 
   scale: 35%; 
   display: block; 
-  margin-top: -1em; }
+  margin-top: -1em;
+margin-right: -1em; }
 .article h3, .article2 h3 { 
   height: 4em; }
 #telefono {
@@ -443,6 +444,9 @@ button {
   to { transform: translateX(-100%); }
 }
 .logols { width: 8em; }
+   .redes, .redes1 {
+    margin: 0 1em;
+   } 
 @media all and (min-width: 768px) {
     .contenedor1 {
   max-width: 45em;
@@ -515,7 +519,7 @@ button {
     }
   #telefono {
     height: 3em;
-    padding-left: 4em;
+    padding-left: 2em;
   }
   .oficina img { 
     padding-right: .2em; 
@@ -550,8 +554,8 @@ button {
   #actividades h3 { font-size: 1.6em; }
   .logo { 
     width: 10em; 
-    margin: 1.5em; 
-    border-radius: 0; }
+    margin: 0em; 
+    border-radius: 0;}
   .cabeza, .pie { 
     padding: .3em; 
     border-radius: 2em; 
@@ -566,8 +570,8 @@ button {
   background: linear-gradient(
     to right, 
     rgb(3, 58, 170) 0%,   /* Oscuro en el borde izquierdo */
-    rgba(3, 58, 170, 0.6) 45%,   /* Transición sobre el texto */
-    rgba(3, 58, 170, 0) 60%      /* Transparente hacia la derecha */
+    rgba(3, 58, 170, 0.6) 35%,   /* Transición sobre el texto */
+    rgba(3, 58, 170, 0) 50%      /* Transparente hacia la derecha */
   );
 }
  .contenedor1 { text-align: left;
@@ -577,16 +581,21 @@ button {
   .slide-video h1,.slide-video p {text-align: left;}
   .slide-video p {
     margin-top: -1em;
-    max-width: 350px;
+    max-width: 300px;
     font-size: 1em;
 }
   .slide-video {
     padding-top: 5em;
 }
+
 } 
-   
+
 /* 2. La capa de sombra va por ENCIMA del video */
 @media all and (min-width: 1200px) {
+    #telefono {
+    padding-left: 4em;
+  }
+  .logo {  margin: 1em; }
   .slide-video h1 {font-size: 4em;}
   .slide-video {
     justify-content: flex-start;
@@ -595,7 +604,7 @@ button {
     min-height: 100dvh;
 }
   .slide-video p {
-    max-width: 550px;
+    max-width: 440px;
 }
   #informacion {
     display: flex;
