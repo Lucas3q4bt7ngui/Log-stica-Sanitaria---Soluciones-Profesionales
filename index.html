@@ -42,12 +42,11 @@
     <div class="video-container">
     <video autoplay muted playsinline>
     <!-- Video para móviles (pantallas menores a 768px) -->
-    <source src="img/videoparacelular.mp4" type="video/mp4" media="(max-width: 1199px)">
-
+    <source src="img/videoparacelular.mp4" type="video/mp4" media="(max-width: 767px)">
+    <source src="img/videoparatablet.mp4" type="video/mp4" media="(max-width: 1199px)">
     <!-- Video actual para pantallas desde 768px en adelante -->
     <source src="img/videoparaweb.mp4" type="video/mp4" media="(min-width: 1200px)">
 </video>
-    
     <!-- CAPA DE SOMBRA (Agregar este div) -->
     <div class="video-overlay"></div>
 </div>
@@ -58,7 +57,6 @@
               nuestro equipo de técnicos certificados trabaja con los más altos 
               estándares de calidad y diagnóstico preciso, asegurando resultados duraderos, 
               limpios y a la medida de tus necesidades reales.</p>
-        
         <a href="https://wa.link/6sq8gr" class="boton">
             <img src="img/logowhatsapp_azul.webp" class="img-normal" alt="Logo">
             <img src="img/logowhatsapp.webp" class="img-hover" alt="WhatsApp">
@@ -262,9 +260,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    // ==========================================
-    // INTERSECTION OBSERVER PARA EL EFECTO REVEAL
-    // ==========================================
     const revealElements = document.querySelectorAll('.reveal');
     const observerOptions = {
       root: null,
@@ -283,7 +278,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 });
-
 document.querySelectorAll('header nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         // Solo aplicar en móviles (menor a 768px)
@@ -305,11 +299,6 @@ document.querySelectorAll('header nav a').forEach(anchor => {
         }
     });
 });
-/**
- * Función que controla la VELOCIDAD de desplazamiento
- * @param {number} endY - Posición final en píxeles
- * @param {number} duration - Tiempo que dura el viaje en milisegundos
- */
 function smoothScrollTo(endY, duration) {
     const startY = window.pageYOffset || window.scrollY;
     const distance = endY - startY;
@@ -333,18 +322,15 @@ function smoothScrollTo(endY, duration) {
     }
     requestAnimationFrame(animation);
 }
-// CÓDIGO NUEVO REEMPLAZO:
 document.addEventListener('DOMContentLoaded', () => {
     const video = document.getElementById('heroVideo');
     const contenido = document.getElementById('contenidoHero');
-
     if (video && contenido) {
         // En lugar de esperar que termine, activamos el texto al iniciar la reproducción
         video.addEventListener('playing', () => {
             contenido.classList.remove('oculto');
             contenido.classList.add('visible');
         });
-
         // Por si la reproducción automática entra de inmediato antes de registrar el listener
         if (!video.paused) {
             contenido.classList.remove('oculto');
