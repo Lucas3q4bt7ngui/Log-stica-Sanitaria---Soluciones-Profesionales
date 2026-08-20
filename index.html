@@ -40,13 +40,35 @@
         <section class="slide-video">
     <!-- Contenedor del Video -->
     <div class="video-container">
-    <video autoplay muted playsinline>
-    <!-- Video para móviles (pantallas menores a 768px) -->
-    <source src="img/videoparacelular.mp4" type="video/mp4" media="(max-width: 767px)">
-    <source src="img/videoparatablet.mp4" type="video/mp4" media="(max-width: 1199px)">
-    <!-- Video actual para pantallas desde 768px en adelante -->
-    <source src="img/videoparaweb.mp4" type="video/mp4" media="(min-width: 1200px)">
-</video>
+    <video 
+    class="video-mobile" 
+    autoplay 
+    muted
+    playsinline 
+    preload="auto" 
+    poster="img/fondo celular.png">
+    <source src="img/videoparacelular.mp4" type="video/mp4">
+  </video>
+  <!-- 2. VÍDEO PARA TABLET -->
+  <video 
+    class="video-tablet" 
+    autoplay 
+    muted
+    playsinline 
+    preload="auto" 
+    poster="img/fondotabletdekstop.png">
+    <source src="img/videoparatablet.mp4" type="video/mp4">
+  </video>
+  <!-- 3. VÍDEO PARA COMPUTADORA -->
+  <video 
+    class="video-desktop" 
+    autoplay 
+    muted
+    playsinline 
+    preload="auto" 
+    poster="img/fondotabletdekstop.png">
+    <source src="img/videoparaweb.mp4" type="video/mp4">
+  </video>
     <!-- CAPA DE SOMBRA (Agregar este div) -->
     <div class="video-overlay"></div>
 </div>
@@ -338,6 +360,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    // Selecciona todos los vídeos de la portada
+    const videos = document.querySelectorAll('.video-container video');
+    
+    videos.forEach(video => {
+      // Fuerza a reiniciar el vídeo al segundo 0 en cuanto el navegador móvil lo active
+      video.addEventListener('loadeddata', () => {
+        video.currentTime = 0;
+      });
+    });
+  });
 </script>
 </body>
 </html>
