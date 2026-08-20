@@ -71,6 +71,7 @@
 .video-mobile, #ham, .head  {
     display: block;
 }
+.video-tablet, .video-desktop { display: none; }
 .slide-video h1{font-size: 2.5em;}
 h1, h2, h3, p, a, li { text-decoration: none; }
 html { scroll-behavior: smooth; }
@@ -549,8 +550,13 @@ margin-right: -1em; }
   .slide-video {
     padding-top: 5em;
 }
+.video-mobile, .video-desktop { display: none; }
+  .video-tablet { display: block; width: 100%; }
+
 } 
 @media all and (min-width: 1200px) {
+  .video-mobile, .video-tablet { display: none; }
+  .video-desktop { display: block; width: 100%; }
   .contenedor1 { 
   padding-left: 3em;
       }
