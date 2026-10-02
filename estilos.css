@@ -11,6 +11,28 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+section .contenedor-video {
+  position: relative;
+  width: 150%;
+  aspect-ratio: 16 / 9; /* Mantiene la proporción clásica de video */
+  overflow: hidden;
+  border-radius: 20px; /* Mantiene bordes suaves si tus imágenes los tenían */
+}
+/* El iframe ocupa el 100% del contenedor */
+section .contenedor-video iframe {
+  width: 100%;
+  height: 100%;
+}
+#informacion1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente todo el contenido */
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px; /* Evita que el contenido toque las orillas de la pantalla */
+  margin: 0 auto;    /* Centra la sección en la página */
+  box-sizing: border-box;
+}
 #informacion1 h2.span {
   margin-bottom: 0;
   margin-top: 0.3em;
@@ -283,18 +305,50 @@ button {
 #informacion { 
   display: grid; 
   margin-bottom: 2em; 
-  margin-top: 2em; 
+  margin-top: 4em; 
   }
-#informacion1 article, #informacion1 p { 
+ #informacion1 p { 
   padding-right: 0; 
-  margin-top: 2em;
-  margin-bottom: 2em; 
 }
 #informacion2 {
   display: grid;
   padding: 2em;
-  gap: 2em;
   padding-bottom: 3em;
+}
+#informacion2 {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+/* 1. Hace que la franja de texto ocupe todo el ancho y sea azul */
+#informacion2 .header-mapa {
+  width: 100vw; /* Asegura el 100% del ancho de la pantalla */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: var(--colorAzul); /* Relleno azul */
+  padding: 20px 0; /* Grosor/alto de la franja */
+  text-align: center;
+}
+/* 2. Hace que el mapa ocupe todo el fondo del section */
+#informacion2 .mapa-wrapper {
+  width: 100vw; /* Ancho completo también para el mapa */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: 400px; /* Define la altura que quieres que tenga el mapa */
+}
+#informacion2 .mapa-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 #informacion2 p { padding-right: 0; }
 #actividades .especial { 
@@ -612,7 +666,6 @@ margin-right: -1em; }
     max-width: 1200px;
     margin: 0 auto;
     padding-top: 3em;
-    padding-left: 3em;
     padding-bottom: 3em;
     flex-wrap: nowrap;
   }
