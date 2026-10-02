@@ -13,7 +13,9 @@
 }
 section .contenedor-video {
   position: relative;
-  width: 150%;
+  margin-top: 4em;
+  margin-bottom: 1em;
+  width: 80%;
   aspect-ratio: 16 / 9; /* Mantiene la proporción clásica de video */
   overflow: hidden;
   border-radius: 20px; /* Mantiene bordes suaves si tus imágenes los tenían */
@@ -609,6 +611,34 @@ margin-right: -1em; }
 
 } 
 @media all and (min-width: 1200px) {
+  section .contenedor-video {
+  width: 150%;
+}
+  #informacion1 {
+    flex-direction: row;
+    align-items: center;      /* Centra verticalmente el texto y el video */
+    justify-content: center;  /* Centra horizontalmente todo el contenido en la página */
+    width: 100%;
+    max-width: 1200px;        /* Define el ancho máximo del contenedor */
+    margin-left: auto;        /* Margen automático a la izquierda */
+    margin-right: auto;       /* Margen automático a la derecha (mantenidos simétricos) */
+    padding-left: 1em;       /* Mismo espacio de seguridad a la izquierda */
+    padding-right: 1em;      /* Mismo espacio de seguridad a la derecha */
+    gap: 50px;                /* Espacio uniforme entre la columna de texto y el video */
+    box-sizing: border-box;
+  }
+  /* Distribución equitativa para las dos columnas */
+  #informacion1 article {
+    flex: 1;                  /* Ambos artículos toman el mismo ancho proporcional */
+    max-width: 500px;         /* Limita el ancho de cada columna para un centrado equilibrado */
+  }
+  /* Ajuste del contenedor del video dentro de su columna */
+  #informacion1 .contenedor-video {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+  }
   .video-mobile, .video-tablet { display: none; }
   .video-desktop { display: block; width: 100%; }
   .contenedor1 { 
@@ -645,35 +675,12 @@ margin-right: -1em; }
   #informacion1 article, #informacion1 p { 
     margin-right: 3em; 
     text-align: left; }
-  #informacion1 .imagen, #actividades, #informacion { display: flex; }
-  #informacion1 .imagen { 
-    flex-direction: column; 
-    gap: 0; 
-    line-height: 0; }
-  #informacion1 .imagen img { 
-    width: 160%; 
-    max-width: 600px; 
-    height: auto !important; 
-    margin: 0 auto; }
+  #actividades, #informacion { display: flex; }
   h2 {  
     font-size: 200%; }
   .imagen { scale: 102%; }
-  #informacion1 {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-content: center;
-    justify-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 3em;
-    padding-bottom: 3em;
-    flex-wrap: nowrap;
-  }
   #informacion1 h2, #informacion1 p { max-width: 600px; }
   #informacion1 h2, #informacion1 p, h2 { text-align: left; }
-  #informacion1 img[alt=camioneta], #informacion1 img[alt=oficina] { 
-    width: 350px; 
-    height: auto; }
   nav a { margin: 0 1em; }
   #actividades { max-width: 920px; }
   #actividades article { flex-basis: 21em; }
