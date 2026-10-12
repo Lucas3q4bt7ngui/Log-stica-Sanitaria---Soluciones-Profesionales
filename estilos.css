@@ -1,15 +1,33 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap);
 :root {
-  --colorNaranja: rgb(238, 127, 0);
-  --colorAzul: rgb(10, 44, 153);
+  --colorNaranja: #ee7f00;
+  --colorAzul: #0a2c99;
   --colorNegro: black;
   --colorBlanco: #fff;
+}
+@font-face {
+  font-family: 'TT Neoris Trial';
+  src: url(Fuente/TT-Neoris-Trial-Regular-BF657267653a369.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TT Neoris Trial';
+  src: url(Fuente/TT-Neoris-Trial-DemiBold-BF657267649fbbb.ttf);
+  font-weight: bold;
+  font-style: bold;
+}
+@font-face {
+  font-family: 'TT Neoris Trial';
+  src: url(Fuente/TT-Neoris-Trial-Medium-BF65726765338f0.ttf);
+  font-weight: 500;
+  font-style: normal;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: 'TT Neoris Trial', sans-serif;
 }
 section .contenedor-video {
   position: relative;
@@ -119,7 +137,8 @@ html { scroll-behavior: smooth; }
   left: 2.5em;        
   opacity: 0;
 }
-.footer-menu h4, h1, span, .span, .cabeza, legend, .boton, .pie, .menu, dt { font-weight: 700; }
+.footer-menu h4, h1, span, .span, legend, .pie, .menu, dt { font-weight: 600; }
+.cabeza, a { font-weight: 500; }
 #informacion1, #fondo { scroll-margin-top: 50px; }
 #informacion2, #fondo, #actividades { scroll-margin-top: 100px; }
 #ham {
