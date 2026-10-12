@@ -137,8 +137,8 @@ html { scroll-behavior: smooth; }
   left: 2.5em;        
   opacity: 0;
 }
-.footer-menu h4, h1, span, .span, legend, .pie, .menu, dt { font-weight: 600; }
-.cabeza, a { font-weight: 500; }
+.footer-menu h4, h1, span, .span, legend, .pie, .menu, dt, .cabeza { font-weight: 600; }
+a { font-weight: 500; }
 #informacion1, #fondo { scroll-margin-top: 50px; }
 #informacion2, #fondo, #actividades { scroll-margin-top: 100px; }
 #ham {
