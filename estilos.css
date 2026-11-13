@@ -316,7 +316,7 @@ button {
   border: .3em solid var(--colorAzul);
   margin: 0 auto;
   padding: 0 1em;
-  border-radius: 1em;
+  border-radius: 4em 0 4em 0;
   gap: 1.3em;
   max-width: 18em;
   margin-top: 2em;
