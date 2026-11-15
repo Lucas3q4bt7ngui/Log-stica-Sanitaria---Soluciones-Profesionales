@@ -322,7 +322,7 @@ button {
   margin-top: 2em;
   height: 11em;
 }
-#actividades .article2 { height: 15em; }
+#actividades .article2 { height: 17em; }
 #informacion { 
   display: grid; 
   margin-bottom: 2em; 
@@ -586,7 +586,7 @@ margin-right: -1em; }
     flex-wrap: wrap; 
     max-width: 500px; }
   #actividades article, #actividades .article2 { 
-    width: 14em; 
+    width: 15em; 
     height: 18em; }
   #actividades h3 { font-size: 1.6em; }
   .logo { 
